@@ -72,7 +72,7 @@ const images = [
   const createImageCard = image => {
     return `
         <li class="gallery-item">
-            <a class="gallery-link" href="large-image.jpg">
+            <a class="gallery-link" href="${image.original}">
                 <img
                     class="gallery-image"
                     src="${image.preview}"
@@ -90,7 +90,7 @@ refs.imageList.innerHTML = imageCard;
 
 const onImageClick = event => {
     event.preventDefault();
-    if (event.target.classList.contains('gallery')){
+    if (!event.target.classList.contains('gallery-image')){
         return;
     }
     
